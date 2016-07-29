@@ -1,0 +1,84 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -box-sizing: border-box;
+}
+
+/*
+#welcome {
+  top: -950px !important;
+}
+
+#welcome h1 {
+  opacity: 0;
+}
+*/
+
+/*================
+=                =
+=    PORTFOLIO   =
+=                =
+================*/
+.content {
+  vertical-align: baseline;
+}
+
+.port-item, .port-link, .port-link img, .port-item h3 {
+  transition: transform 0.4s;
+  color: #fff;
+}
+
+.port-item {
+  display: inline-block;
+  position: relative;
+  word-break: break-word;
+  overflow: hidden;
+  vertical-align: top;
+  width: 50%;
+}
+
+.port-link {
+  min-height: 270px;
+  position: relative;
+}
+
+.port-link img {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  max-width: 200px;
+  border-radius: 10px;
+
+}
+
+.port-item h3 {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 5% 10%;
+  transform: translate(0, 0);
+  background-color: rgba(0, 0, 0, 0.6);
+  line-height: 1em;
+}
+
+.port-item:hover h3 {
+  transform: translate(0, 0);
+}
+
+.port-item:hover a.port-link {
+  transform: scale(0.9, 0.9);
+}
+
+/*Sets layout for Non-Mobile Devices*/
+
+@media only screen and (min-width: 960px) {
+  .port-item {
+    width: 33.3%;
+  }
+
+  .port-item h3 {
+    transform: translate(0, 102%);
+  }
+}

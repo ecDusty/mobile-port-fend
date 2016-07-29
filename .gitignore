@@ -1,3 +1,14 @@
+################
+## Remove Distribution Folder
+################
+
+dist/**
+*node_modules
+
+################
+## Windows Files
+################
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
