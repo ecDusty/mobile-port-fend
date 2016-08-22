@@ -487,7 +487,7 @@ window.performance.mark("mark_start_generating"); // collect timing data
 var pizzasDiv = document.getElementById("randomPizzas");
 
 //Provides a variety of number of pizza's generated when the page loads
-var numPizzas = Math.floor(Math.random()*(90-30))+30;
+var numPizzas = Math.floor(Math.random()*(90-30))+60;
 
 for (var i = 2; i < numPizzas; i++) {
   pizzasDiv.appendChild(pizzaElementGenerator(i));
@@ -533,11 +533,8 @@ function updatePositions() {
 
 function createPizzas () {
   /* Cross browser supported code that will grab the windows Height & Width*/
-	console.log('Create Pizza fired')
-  var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
-
-  var height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-
+  var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
+		height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
   /*After determining the Height & Width, only enough pizzas are generated to fill the screen*/
   var cols = Math.ceil(width/250),
 	  rows = Math.ceil(height/230),
@@ -554,13 +551,10 @@ function createPizzas () {
   }
   updatePositions();
 }
-
 // Generates the sliding pizzas when the page loads.
 createPizzas();
 
 window.addEventListener("resize", function () {
-	console.log('resize has fired');
-
   var width = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth,
 		height = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight,
   /*After determining the Height & Width, make sure more pizzas are only created when there aren't enough on screen*/
