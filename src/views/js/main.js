@@ -512,7 +512,7 @@ function updatePositions() {
   window.performance.mark("mark_start_frame");
 
   var items = document.getElementsByClassName('mover');
-  var scrollTopPos = document.body.scrollTop;
+  var scrollTopPos = window.scrollY || document.body.scrollTop;
   var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
   var phase;
