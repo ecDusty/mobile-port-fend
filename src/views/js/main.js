@@ -513,11 +513,12 @@ function updatePositions() {
 
   var items = document.getElementsByClassName('mover');
   var scrollTopPos = document.body.scrollTop;
+  var winWidth = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
 
   var phase;
 
   for (var i = 0; i < items.length; i++) {
-	phase = Math.sin((scrollTopPos / 1250) + (i % 5));
+	phase = Math.sin((scrollTopPos / 1250) + (i % (Math.ceil(winWidth/250) + 1)));
 	items[i].style.left = items[i].basicLeft + 100 * phase + 'px';
   }
 
@@ -547,7 +548,7 @@ function createPizzas () {
 	elem.src = "images/pizza-sm.png";
 	elem.style.height = "94px";
 	elem.style.width = "73px";
-	elem.basicLeft = (i % cols) * s + (i % rows);
+	elem.basicLeft = (i % cols) * s;
 	elem.style.top = (Math.floor(i / cols) * s) + 'px';
 	document.getElementById("movingPizzas1").appendChild(elem);
   }
